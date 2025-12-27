@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Royal Thai Spa San Francisco',
@@ -9,8 +10,17 @@ export default function ContactPage() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="section-padding bg-gradient-to-b from-spa-darker to-spa-dark">
-        <div className="max-w-7xl mx-auto text-center">
+      <section className="relative section-padding">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/herbal-massage.jpg"
+            alt="Contact Royal Thai Spa"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-spa-darker/95 via-spa-darker/80 to-spa-darker"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto text-center">
           <p className="text-gold-500 font-medium tracking-widest uppercase mb-4">Contact</p>
           <h1 className="heading-primary mb-6">Get in Touch</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
