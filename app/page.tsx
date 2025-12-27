@@ -1,40 +1,41 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const services = [
   {
     title: 'Thai Massage',
     description: 'Traditional Thai stretching and pressure point therapy for deep relaxation and flexibility.',
-    icon: '🙏',
+    image: '/images/thai-massage.jpg',
     href: '/services#thai-massage',
   },
   {
     title: 'Deep Tissue',
     description: 'Intensive massage targeting chronic muscle tension and knots for lasting relief.',
-    icon: '💪',
+    image: '/images/massage.jpg',
     href: '/services#deep-tissue',
   },
   {
     title: 'Cryo T Shock',
     description: 'Advanced cryotherapy treatment for body contouring and skin rejuvenation.',
-    icon: '❄️',
+    image: '/images/cryo-treatment.jpg',
     href: '/services#cryo',
   },
   {
     title: 'Infrared Sauna',
     description: 'Detoxify and relax with our state-of-the-art infrared sauna therapy.',
-    icon: '🔥',
+    image: '/images/sauna.jpg',
     href: '/services#sauna',
   },
   {
     title: 'Cold Plunge',
     description: 'Invigorating cold therapy to boost recovery and mental clarity.',
-    icon: '🧊',
+    image: '/images/cold-plunge.png',
     href: '/services#cold-plunge',
   },
   {
     title: 'Red Light Therapy',
     description: 'Full body light therapy for skin health and cellular regeneration.',
-    icon: '✨',
+    image: '/images/red-light.jpg',
     href: '/services#red-light',
   },
 ]
@@ -62,9 +63,16 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-spa-darker via-spa-dark to-spa-darker">
-          <div className="absolute inset-0 opacity-20 bg-[url('/images/pattern.svg')] bg-repeat"></div>
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-massage.jpg"
+            alt="Relaxing massage at Royal Thai Spa"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-spa-darker/90 via-spa-darker/70 to-spa-darker"></div>
         </div>
 
         {/* Decorative elements */}
@@ -136,14 +144,24 @@ export default function Home() {
               <Link
                 key={service.title}
                 href={service.href}
-                className="card group hover:scale-105 transition-transform duration-300"
+                className="group relative overflow-hidden rounded-2xl bg-spa-darker border border-gold-500/10 hover:border-gold-500/30 transition-all duration-300 hover:scale-105"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-gold-500 transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-gray-400 text-sm">{service.description}</p>
+                <div className="aspect-[4/3] relative">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-spa-darker via-spa-darker/50 to-transparent"></div>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-gold-500 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm">{service.description}</p>
+                </div>
               </Link>
             ))}
           </div>
@@ -184,12 +202,17 @@ export default function Home() {
               </ul>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-gold-500/20 to-spa-dark border border-gold-500/20 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="text-6xl mb-4">🧘</div>
-                  <p className="text-2xl font-serif text-gold-500">Since 2015</p>
-                  <p className="text-gray-400">Serving San Francisco</p>
-                </div>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-gold-500/20">
+                <Image
+                  src="/images/spa-treatment.jpg"
+                  alt="Spa treatment at Royal Thai Spa"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -left-6 bg-spa-dark border border-gold-500/30 rounded-xl p-4 shadow-xl">
+                <p className="text-3xl font-serif text-gold-500">Since 2015</p>
+                <p className="text-gray-400 text-sm">Serving San Francisco</p>
               </div>
               {/* Decorative element */}
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gold-500/20 rounded-full blur-xl"></div>
@@ -198,8 +221,80 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Featured Packages */}
       <section className="section-padding bg-spa-dark">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-gold-500 font-medium tracking-widest uppercase mb-4">Special Packages</p>
+            <h2 className="heading-secondary mb-4">Curated Experiences</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="group relative overflow-hidden rounded-2xl">
+              <div className="aspect-[3/4] relative">
+                <Image
+                  src="/images/couples.jpg"
+                  alt="Couples massage package"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-spa-darker via-spa-darker/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <p className="text-gold-500 text-sm font-medium mb-1">For Two</p>
+                <h3 className="text-2xl font-serif text-white mb-2">Couples Retreat</h3>
+                <p className="text-gray-400 text-sm mb-4">Share a romantic spa experience together</p>
+                <Link href="/packages" className="text-gold-500 hover:text-gold-400 text-sm font-medium">
+                  View Package →
+                </Link>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl">
+              <div className="aspect-[3/4] relative">
+                <Image
+                  src="/images/restore-package.jpg"
+                  alt="Restore package"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-spa-darker via-spa-darker/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <p className="text-gold-500 text-sm font-medium mb-1">Recovery</p>
+                <h3 className="text-2xl font-serif text-white mb-2">Restore Package</h3>
+                <p className="text-gray-400 text-sm mb-4">Deep muscle relief and total restoration</p>
+                <Link href="/packages" className="text-gold-500 hover:text-gold-400 text-sm font-medium">
+                  View Package →
+                </Link>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl">
+              <div className="aspect-[3/4] relative">
+                <Image
+                  src="/images/gift-card.jpg"
+                  alt="Gift cards"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-spa-darker via-spa-darker/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <p className="text-gold-500 text-sm font-medium mb-1">Give Wellness</p>
+                <h3 className="text-2xl font-serif text-white mb-2">Gift Cards</h3>
+                <p className="text-gray-400 text-sm mb-4">The perfect present for any occasion</p>
+                <Link href="/packages" className="text-gold-500 hover:text-gold-400 text-sm font-medium">
+                  Purchase →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="section-padding bg-spa-darker">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-gold-500 font-medium tracking-widest uppercase mb-4">Testimonials</p>
@@ -236,8 +331,16 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-spa-darker via-spa-dark to-spa-darker relative overflow-hidden">
-        <div className="absolute inset-0 bg-gold-500/5"></div>
+      <section className="relative section-padding overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/herbal-massage.jpg"
+            alt="Herbal massage"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-spa-darker/90"></div>
+        </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h2 className="heading-secondary mb-6">Ready to Relax?</h2>
           <p className="text-xl text-gray-300 mb-10">
