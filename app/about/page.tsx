@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About Us | Royal Thai Spa San Francisco',
@@ -38,17 +37,8 @@ export default function AboutPage() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="relative section-padding">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/spa-treatment.jpg"
-            alt="Royal Thai Spa"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-spa-darker/95 via-spa-darker/80 to-spa-darker"></div>
-        </div>
-        <div className="relative max-w-7xl mx-auto text-center">
+      <section className="section-padding bg-gradient-to-b from-spa-darker to-spa-dark">
+        <div className="max-w-7xl mx-auto text-center">
           <p className="text-gold-500 font-medium tracking-widest uppercase mb-4">About Us</p>
           <h1 className="heading-primary mb-6">Royal Thai Spa</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -79,17 +69,11 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <Image
-                  src="/images/thai-massage.jpg"
-                  alt="Thai massage therapy"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-spa-darker/80 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-                  <p className="text-2xl font-serif text-gold-500 mb-1">Est. 2015</p>
-                  <p className="text-gray-300">Fisherman&apos;s Wharf</p>
+              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-gold-500/20 to-spa-dark border border-gold-500/20 flex items-center justify-center">
+                <div className="text-center p-8">
+                  <div className="text-6xl mb-4">🏆</div>
+                  <p className="text-2xl font-serif text-gold-500 mb-2">Est. 2015</p>
+                  <p className="text-gray-400">Fisherman&apos;s Wharf</p>
                 </div>
               </div>
             </div>
@@ -203,17 +187,8 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative section-padding">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/couples.jpg"
-            alt="Book your spa experience"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-spa-darker/90"></div>
-        </div>
-        <div className="relative max-w-4xl mx-auto text-center">
+      <section className="section-padding bg-spa-darker">
+        <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-serif font-bold text-white mb-6">
             Have More Questions?
           </h2>

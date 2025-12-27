@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Spa Packages | Royal Thai Spa San Francisco',
@@ -20,7 +19,6 @@ const packages = [
     ],
     duration: '2.5 hours',
     price: '$245',
-    image: '/images/thai-massage.jpg',
     popular: true,
   },
   {
@@ -34,7 +32,6 @@ const packages = [
     ],
     duration: '2 hours',
     price: '$195',
-    image: '/images/restore-package.jpg',
     popular: false,
   },
   {
@@ -48,7 +45,6 @@ const packages = [
     ],
     duration: '2 hours',
     price: '$185',
-    image: '/images/sauna.jpg',
     popular: false,
   },
   {
@@ -62,7 +58,6 @@ const packages = [
     ],
     duration: '1.5 hours',
     price: '$165',
-    image: '/images/awaken-package.jpg',
     popular: false,
   },
   {
@@ -77,7 +72,6 @@ const packages = [
     ],
     duration: '1.5 hours',
     price: '$295',
-    image: '/images/couples.jpg',
     popular: true,
   },
   {
@@ -92,7 +86,6 @@ const packages = [
     ],
     duration: '1.5 hours',
     price: '$225',
-    image: '/images/cryo-treatment.jpg',
     popular: false,
   },
 ]
@@ -108,17 +101,8 @@ export default function PackagesPage() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="relative section-padding">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/spa-treatment.jpg"
-            alt="Spa packages"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-spa-darker/95 via-spa-darker/80 to-spa-darker"></div>
-        </div>
-        <div className="relative max-w-7xl mx-auto text-center">
+      <section className="section-padding bg-gradient-to-b from-spa-darker to-spa-dark">
+        <div className="max-w-7xl mx-auto text-center">
           <p className="text-gold-500 font-medium tracking-widest uppercase mb-4">Spa Packages</p>
           <h1 className="heading-primary mb-6">Curated Experiences</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -134,25 +118,16 @@ export default function PackagesPage() {
             {packages.map((pkg, index) => (
               <div
                 key={index}
-                className={`card relative overflow-hidden ${pkg.popular ? 'border-gold-500/50 ring-1 ring-gold-500/20' : ''}`}
+                className={`card relative ${pkg.popular ? 'border-gold-500/50 ring-1 ring-gold-500/20' : ''}`}
               >
                 {pkg.popular && (
-                  <div className="absolute top-4 right-4 z-10">
-                    <span className="bg-gold-500 text-spa-darker text-xs font-bold px-3 py-1 rounded-full">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-gold-500 text-spa-darker text-xs font-bold px-4 py-1 rounded-full">
                       POPULAR
                     </span>
                   </div>
                 )}
-                <div className="relative aspect-[16/9] -mx-6 -mt-6 mb-6 overflow-hidden">
-                  <Image
-                    src={pkg.image}
-                    alt={pkg.name}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-spa-dark to-transparent"></div>
-                </div>
-                <div>
+                <div className="pt-2">
                   <p className="text-gold-500 text-sm font-medium mb-1">{pkg.tagline}</p>
                   <h3 className="text-2xl font-serif font-bold text-white mb-2">{pkg.name}</h3>
                   <p className="text-gray-400 text-sm mb-6">{pkg.description}</p>
@@ -190,72 +165,55 @@ export default function PackagesPage() {
       {/* Gift Cards */}
       <section className="section-padding bg-spa-dark">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-              <Image
-                src="/images/gift-card.jpg"
-                alt="Gift cards"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <p className="text-gold-500 font-medium tracking-widest uppercase mb-4">Gift Cards</p>
-              <h2 className="heading-secondary mb-4">Give the Gift of Relaxation</h2>
-              <p className="text-gray-400 mb-8">
-                The perfect present for any occasion. Gift cards never expire and can be used for any service or package.
-              </p>
+          <div className="text-center mb-12">
+            <p className="text-gold-500 font-medium tracking-widest uppercase mb-4">Gift Cards</p>
+            <h2 className="heading-secondary mb-4">Give the Gift of Relaxation</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              The perfect present for any occasion. Gift cards never expire and can be used for any service or package.
+            </p>
+          </div>
 
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {giftCards.map((card, index) => (
-                  <div key={index} className="bg-spa-darker rounded-xl p-4 text-center border border-gold-500/10">
-                    <p className="text-2xl font-bold text-gold-500 mb-1">{card.amount}</p>
-                    <p className="text-gray-400 text-xs">{card.description}</p>
-                  </div>
-                ))}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {giftCards.map((card, index) => (
+              <div key={index} className="card text-center py-8">
+                <p className="text-3xl font-bold text-gold-500 mb-2">{card.amount}</p>
+                <p className="text-gray-400 text-sm">{card.description}</p>
               </div>
+            ))}
+          </div>
 
-              <a href="tel:+14155004321" className="btn-primary">
-                Purchase Gift Card
-              </a>
-              <p className="text-gray-500 text-sm mt-4">
-                Call or visit us to purchase. Available in-store or by phone.
-              </p>
-            </div>
+          <div className="text-center mt-8">
+            <a href="tel:+14155004321" className="btn-primary">
+              Purchase Gift Card
+            </a>
+            <p className="text-gray-500 text-sm mt-4">
+              Call or visit us to purchase. Available in-store or by phone.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Membership */}
-      <section className="relative section-padding">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/herbal-massage.jpg"
-            alt="Membership"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-spa-darker/95"></div>
-        </div>
-        <div className="relative max-w-4xl mx-auto">
-          <div className="text-center">
+      <section className="section-padding bg-spa-darker">
+        <div className="max-w-4xl mx-auto">
+          <div className="card bg-gradient-to-br from-spa-dark to-spa-darker border-gold-500/30 text-center p-8 md:p-12">
             <p className="text-gold-500 font-medium tracking-widest uppercase mb-4">Membership</p>
             <h2 className="heading-secondary mb-4">Royal Rewards</h2>
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
               Join our membership program and enjoy exclusive benefits including discounted treatments, priority booking, and special member-only offers.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-spa-dark/50 backdrop-blur-sm rounded-xl p-6 border border-gold-500/20">
+              <div className="text-center">
                 <div className="text-3xl mb-2">💰</div>
                 <p className="text-white font-medium">10% Off</p>
                 <p className="text-gray-400 text-sm">All services</p>
               </div>
-              <div className="bg-spa-dark/50 backdrop-blur-sm rounded-xl p-6 border border-gold-500/20">
+              <div className="text-center">
                 <div className="text-3xl mb-2">⭐</div>
                 <p className="text-white font-medium">Earn Points</p>
                 <p className="text-gray-400 text-sm">Redeem for services</p>
               </div>
-              <div className="bg-spa-dark/50 backdrop-blur-sm rounded-xl p-6 border border-gold-500/20">
+              <div className="text-center">
                 <div className="text-3xl mb-2">🎁</div>
                 <p className="text-white font-medium">Special Offers</p>
                 <p className="text-gray-400 text-sm">Members only</p>

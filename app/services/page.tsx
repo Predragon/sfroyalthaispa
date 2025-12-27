@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Services | Royal Thai Spa San Francisco',
@@ -14,7 +13,6 @@ const massageServices = [
     description: 'Experience authentic Thai massage combining acupressure, stretching, and yoga-like positions. Our therapists use their hands, knees, legs, and feet to move you into a series of stretches while applying deep muscle compression and joint mobilization.',
     duration: '60/90/120 min',
     price: 'From $95',
-    image: '/images/thai-massage.jpg',
     benefits: ['Increased flexibility', 'Stress relief', 'Improved circulation', 'Energy restoration'],
   },
   {
@@ -23,7 +21,6 @@ const massageServices = [
     description: 'Intensive massage therapy focusing on the deeper layers of muscle tissue. Perfect for chronic aches, pain, and contracted areas such as stiff neck, upper back, low back pain, leg muscle tightness, and sore shoulders.',
     duration: '60/90/120 min',
     price: 'From $105',
-    image: '/images/massage.jpg',
     benefits: ['Pain relief', 'Muscle recovery', 'Reduced tension', 'Improved mobility'],
   },
   {
@@ -32,7 +29,6 @@ const massageServices = [
     description: 'A relaxing full-body massage using doTERRA essential oils tailored to your needs. The aromatic compounds enhance your physical and emotional wellbeing while skilled hands work away tension.',
     duration: '60/90 min',
     price: 'From $110',
-    image: '/images/spa-treatment.jpg',
     benefits: ['Deep relaxation', 'Mood enhancement', 'Skin nourishment', 'Stress relief'],
   },
   {
@@ -41,7 +37,6 @@ const massageServices = [
     description: 'Ancient healing art applying pressure to specific points on the feet that correspond to different body organs and systems. Promotes healing, relaxation, and overall wellbeing.',
     duration: '30/60 min',
     price: 'From $55',
-    image: '/images/massage.jpg',
     benefits: ['Improved circulation', 'Relaxation', 'Pain reduction', 'Better sleep'],
   },
   {
@@ -50,7 +45,6 @@ const massageServices = [
     description: 'Traditional Thai herbal compress massage using steamed herbs wrapped in cloth. The warm compresses are applied to the body, releasing aromatic essential oils that soothe muscles and calm the mind.',
     duration: '90 min',
     price: 'From $130',
-    image: '/images/herbal-massage.jpg',
     benefits: ['Muscle relaxation', 'Detoxification', 'Skin rejuvenation', 'Aromatherapy benefits'],
   },
   {
@@ -59,7 +53,6 @@ const massageServices = [
     description: 'Share a relaxing experience with your partner in our private couples room. Choose your preferred massage style and enjoy side-by-side treatments in a romantic setting.',
     duration: '60/90 min',
     price: 'From $190',
-    image: '/images/couples.jpg',
     benefits: ['Shared experience', 'Romantic atmosphere', 'Quality time', 'Mutual relaxation'],
   },
 ]
@@ -71,7 +64,6 @@ const wellnessServices = [
     description: 'Revolutionary treatment using thermal shock technology to destroy fat cells, reduce cellulite, and tighten skin. Alternating cold and warm temperatures boost collagen production and metabolism.',
     duration: '30-60 min',
     price: 'From $150',
-    image: '/images/cryo-treatment.jpg',
     benefits: ['Fat reduction', 'Cellulite treatment', 'Skin tightening', 'Collagen boost'],
   },
   {
@@ -80,7 +72,6 @@ const wellnessServices = [
     description: 'Private infrared sauna session using light to create heat, penetrating deeper into tissues than traditional saunas. Lower temperatures, greater detoxification, and enhanced relaxation.',
     duration: '30/45 min',
     price: 'From $45',
-    image: '/images/sauna.jpg',
     benefits: ['Detoxification', 'Pain relief', 'Weight loss', 'Improved circulation'],
   },
   {
@@ -89,7 +80,6 @@ const wellnessServices = [
     description: 'Full-body red light therapy using medical-grade LED panels. Stimulates cellular energy production, reduces inflammation, and promotes healing at the cellular level.',
     duration: '20/30 min',
     price: 'From $40',
-    image: '/images/red-light.jpg',
     benefits: ['Skin health', 'Reduced inflammation', 'Faster healing', 'Anti-aging'],
   },
   {
@@ -98,7 +88,6 @@ const wellnessServices = [
     description: 'Invigorating cold water immersion therapy to boost recovery, reduce inflammation, and enhance mental clarity. Perfect after sauna or massage for the ultimate contrast therapy.',
     duration: '10-15 min',
     price: 'From $35',
-    image: '/images/cold-plunge.png',
     benefits: ['Muscle recovery', 'Mental clarity', 'Reduced inflammation', 'Immune boost'],
   },
   {
@@ -107,7 +96,6 @@ const wellnessServices = [
     description: 'Advanced pneumatic compression boots that massage and stimulate blood flow in the legs. Ideal for athletes, travelers, or anyone seeking improved circulation and recovery.',
     duration: '30 min',
     price: 'From $45',
-    image: '/images/compression.jpg',
     benefits: ['Faster recovery', 'Reduced swelling', 'Improved circulation', 'Relaxation'],
   },
   {
@@ -116,44 +104,31 @@ const wellnessServices = [
     description: 'Rejuvenating facial treatments customized to your skin type. Deep cleansing, exfoliation, and hydration leave your skin glowing and refreshed.',
     duration: '60 min',
     price: 'From $95',
-    image: '/images/facial.jpg',
     benefits: ['Deep cleansing', 'Hydration', 'Anti-aging', 'Radiant skin'],
   },
 ]
 
 function ServiceCard({ service }: { service: typeof massageServices[0] }) {
   return (
-    <div id={service.id} className="card scroll-mt-24 overflow-hidden">
-      <div className="flex flex-col md:flex-row gap-6">
-        <div className="md:w-1/3 relative aspect-[4/3] md:aspect-square rounded-xl overflow-hidden flex-shrink-0">
-          <Image
-            src={service.image}
-            alt={service.name}
-            fill
-            className="object-cover"
-          />
-        </div>
+    <div id={service.id} className="card scroll-mt-24">
+      <div className="flex flex-col md:flex-row md:items-start gap-6">
         <div className="flex-grow">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-            <div>
-              <h3 className="text-2xl font-serif font-bold text-white mb-2">{service.name}</h3>
-              <p className="text-gray-400 mb-4">{service.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {service.benefits.map((benefit, index) => (
-                  <span
-                    key={index}
-                    className="text-xs bg-gold-500/10 text-gold-500 px-3 py-1 rounded-full"
-                  >
-                    {benefit}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="md:text-right flex-shrink-0">
-              <p className="text-gold-500 font-semibold text-xl">{service.price}</p>
-              <p className="text-gray-500 text-sm">{service.duration}</p>
-            </div>
+          <h3 className="text-2xl font-serif font-bold text-white mb-2">{service.name}</h3>
+          <p className="text-gray-400 mb-4">{service.description}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {service.benefits.map((benefit, index) => (
+              <span
+                key={index}
+                className="text-xs bg-gold-500/10 text-gold-500 px-3 py-1 rounded-full"
+              >
+                {benefit}
+              </span>
+            ))}
           </div>
+        </div>
+        <div className="md:text-right flex-shrink-0">
+          <p className="text-gold-500 font-semibold text-lg">{service.price}</p>
+          <p className="text-gray-500 text-sm">{service.duration}</p>
         </div>
       </div>
     </div>
@@ -164,17 +139,8 @@ export default function ServicesPage() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="relative section-padding">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/spa-treatment.jpg"
-            alt="Spa services"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-spa-darker/95 via-spa-darker/80 to-spa-darker"></div>
-        </div>
-        <div className="relative max-w-7xl mx-auto text-center">
+      <section className="section-padding bg-gradient-to-b from-spa-darker to-spa-dark">
+        <div className="max-w-7xl mx-auto text-center">
           <p className="text-gold-500 font-medium tracking-widest uppercase mb-4">Our Services</p>
           <h1 className="heading-primary mb-6">Massage & Wellness</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -223,17 +189,8 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative section-padding">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/herbal-massage.jpg"
-            alt="Book treatment"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-spa-darker/90"></div>
-        </div>
-        <div className="relative max-w-4xl mx-auto text-center">
+      <section className="section-padding bg-spa-darker">
+        <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-serif font-bold text-white mb-6">
             Ready to Book Your Treatment?
           </h2>
