@@ -47,22 +47,36 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-white font-medium mb-1">Phone</h3>
-                    <a href="tel:+14155004321" className="text-gold-500 text-lg hover:underline">(415) 500-4321</a>
+                    <a href="tel:+14159021442" className="text-gold-500 text-lg hover:underline">(415) 902-1442</a>
                     <p className="text-gray-400 text-sm mt-1">For reservations and inquiries</p>
                   </div>
                 </div>
 
-                {/* Text */}
+                {/* Email */}
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-gold-500/10 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-white font-medium mb-1">Text</h3>
-                    <a href="sms:+14158942299" className="text-gold-500 text-lg hover:underline">(415) 894-2299</a>
-                    <p className="text-gray-400 text-sm mt-1">Quick questions & booking</p>
+                    <h3 className="text-white font-medium mb-1">Email</h3>
+                    <a href="mailto:reservations@sfroyalthaispa.com" className="text-gold-500 text-lg hover:underline">reservations@sfroyalthaispa.com</a>
+                    <p className="text-gray-400 text-sm mt-1">For reservations and inquiries</p>
+                  </div>
+                </div>
+
+                {/* Book Online */}
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gold-500/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-white font-medium mb-1">Book Online</h3>
+                    <a href="https://sfroyalthaispa.square.site/" target="_blank" rel="noopener noreferrer" className="text-gold-500 text-lg hover:underline">sfroyalthaispa.square.site</a>
+                    <p className="text-gray-400 text-sm mt-1">Schedule your appointment</p>
                   </div>
                 </div>
 
@@ -215,7 +229,7 @@ export default function ContactPage() {
                     Send Message
                   </button>
                   <p className="text-gray-500 text-xs text-center">
-                    For immediate assistance, please call <a href="tel:+14155004321" className="text-gold-500">(415) 500-4321</a>
+                    For immediate assistance, please call <a href="tel:+14159021442" className="text-gold-500">(415) 902-1442</a>
                   </p>
                 </form>
               </div>

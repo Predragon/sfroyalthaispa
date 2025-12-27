@@ -238,14 +238,14 @@ export default function ServicesPage() {
             Ready to Book Your Treatment?
           </h2>
           <p className="text-gray-400 mb-8">
-            Call or text us to schedule your appointment. Walk-ins welcome based on availability.
+            Book online or call us to schedule your appointment. Walk-ins welcome based on availability.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+14155004321" className="btn-primary">
-              Call (415) 500-4321
+            <a href="https://sfroyalthaispa.square.site/" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              Book Online
             </a>
-            <a href="sms:+14158942299" className="btn-secondary">
-              Text (415) 894-2299
+            <a href="tel:+14159021442" className="btn-secondary">
+              Call (415) 902-1442
             </a>
           </div>
         </div>

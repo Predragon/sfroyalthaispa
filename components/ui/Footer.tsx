@@ -54,11 +54,11 @@ export default function Footer() {
               </li>
               <li>
                 <span className="block text-gold-500 font-medium">Phone</span>
-                <a href="tel:+14155004321" className="text-gray-400 hover:text-white transition-colors">(415) 500-4321</a>
+                <a href="tel:+14159021442" className="text-gray-400 hover:text-white transition-colors">(415) 902-1442</a>
               </li>
               <li>
-                <span className="block text-gold-500 font-medium">Text</span>
-                <a href="sms:+14158942299" className="text-gray-400 hover:text-white transition-colors">(415) 894-2299</a>
+                <span className="block text-gold-500 font-medium">Email</span>
+                <a href="mailto:reservations@sfroyalthaispa.com" className="text-gray-400 hover:text-white transition-colors">reservations@sfroyalthaispa.com</a>
               </li>
               <li className="text-gray-400">
                 <span className="block text-gold-500 font-medium">Hours</span>
