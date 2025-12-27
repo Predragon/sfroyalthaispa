@@ -138,8 +138,8 @@ export default function AboutPage() {
                 <div>
                   <h3 className="text-gold-500 font-medium mb-2">Contact</h3>
                   <p className="text-gray-300">
-                    Phone: <a href="tel:+14155004321" className="text-gold-500 hover:underline">(415) 500-4321</a><br />
-                    Text: <a href="sms:+14158942299" className="text-gold-500 hover:underline">(415) 894-2299</a>
+                    Phone: <a href="tel:+14159021442" className="text-gold-500 hover:underline">(415) 902-1442</a><br />
+                    Email: <a href="mailto:reservations@sfroyalthaispa.com" className="text-gold-500 hover:underline">reservations@sfroyalthaispa.com</a>
                   </p>
                 </div>
                 <div>
@@ -196,8 +196,8 @@ export default function AboutPage() {
             We&apos;re happy to help. Reach out anytime.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+14155004321" className="btn-primary">
-              Call Us
+            <a href="https://sfroyalthaispa.square.site/" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              Book Online
             </a>
             <Link href="/contact" className="btn-secondary">
               Send a Message

@@ -41,10 +41,12 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href="tel:+14155004321"
+              href="https://sfroyalthaispa.square.site/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary text-sm"
             >
-              (415) 500-4321
+              Book Now
             </a>
           </nav>
 
@@ -94,10 +96,12 @@ export default function Header() {
                 </Link>
               ))}
               <a
-                href="tel:+14155004321"
+                href="https://sfroyalthaispa.square.site/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary text-center text-sm mt-4"
               >
-                Call (415) 500-4321
+                Book Now
               </a>
             </nav>
           </div>

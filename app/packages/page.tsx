@@ -151,7 +151,7 @@ export default function PackagesPage() {
                       <p className="text-3xl font-bold text-gold-500">{pkg.price}</p>
                       <p className="text-gray-500 text-sm">{pkg.duration}</p>
                     </div>
-                    <a href="tel:+14155004321" className="btn-primary text-sm py-2 px-4">
+                    <a href="https://sfroyalthaispa.square.site/" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-4">
                       Book Now
                     </a>
                   </div>
@@ -183,11 +183,11 @@ export default function PackagesPage() {
           </div>
 
           <div className="text-center mt-8">
-            <a href="tel:+14155004321" className="btn-primary">
+            <a href="https://sfroyalthaispa.square.site/" target="_blank" rel="noopener noreferrer" className="btn-primary">
               Purchase Gift Card
             </a>
             <p className="text-gray-500 text-sm mt-4">
-              Call or visit us to purchase. Available in-store or by phone.
+              Available online or in-store.
             </p>
           </div>
         </div>
@@ -219,7 +219,7 @@ export default function PackagesPage() {
                 <p className="text-gray-400 text-sm">Members only</p>
               </div>
             </div>
-            <a href="tel:+14155004321" className="btn-primary">
+            <a href="https://sfroyalthaispa.square.site/" target="_blank" rel="noopener noreferrer" className="btn-primary">
               Ask About Membership
             </a>
           </div>
@@ -236,12 +236,12 @@ export default function PackagesPage() {
             Our team is happy to help you choose the perfect package for your needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+14155004321" className="btn-primary">
-              Call (415) 500-4321
+            <a href="https://sfroyalthaispa.square.site/" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              Book Online
             </a>
-            <Link href="/contact" className="btn-secondary">
-              Contact Us
-            </Link>
+            <a href="tel:+14159021442" className="btn-secondary">
+              Call (415) 902-1442
+            </a>
           </div>
         </div>
       </section>

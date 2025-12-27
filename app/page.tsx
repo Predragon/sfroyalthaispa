@@ -92,12 +92,12 @@ export default function Home() {
             Experience traditional Thai massage and modern wellness therapies at Fisherman&apos;s Wharf
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <a href="tel:+14155004321" className="btn-primary text-lg">
-              Book Now: (415) 500-4321
+            <a href="https://sfroyalthaispa.square.site/" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg">
+              Book Online
             </a>
-            <Link href="/services" className="btn-secondary text-lg">
-              View Services
-            </Link>
+            <a href="tel:+14159021442" className="btn-secondary text-lg">
+              Call (415) 902-1442
+            </a>
           </div>
 
           {/* Quick Info */}
@@ -113,9 +113,9 @@ export default function Home() {
               <p className="text-gray-400 text-sm">10AM - 9/10PM</p>
             </div>
             <div className="bg-spa-dark/50 backdrop-blur-sm rounded-xl p-6 border border-gold-500/20">
-              <div className="text-gold-500 text-2xl mb-2">📱</div>
-              <p className="text-white font-medium">Text to Book</p>
-              <p className="text-gray-400 text-sm">(415) 894-2299</p>
+              <div className="text-gold-500 text-2xl mb-2">📧</div>
+              <p className="text-white font-medium">Email Us</p>
+              <p className="text-gray-400 text-sm">reservations@sfroyalthaispa.com</p>
             </div>
           </div>
         </div>
@@ -347,11 +347,11 @@ export default function Home() {
             Book your appointment today and experience the Royal Thai difference.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+14155004321" className="btn-primary text-lg">
-              Call (415) 500-4321
+            <a href="https://sfroyalthaispa.square.site/" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg">
+              Book Online
             </a>
-            <a href="sms:+14158942299" className="btn-secondary text-lg">
-              Text (415) 894-2299
+            <a href="tel:+14159021442" className="btn-secondary text-lg">
+              Call (415) 902-1442
             </a>
           </div>
           <p className="text-gray-500 mt-8 text-sm">
